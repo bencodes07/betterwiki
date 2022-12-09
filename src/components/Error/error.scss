@@ -1,0 +1,16 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p {
+  color: #EA3323;
+}
+
+.icon {
+  font-weight: bold;
+  position: relative;
+  top: 2px;
+  margin-right: 3px;
+}

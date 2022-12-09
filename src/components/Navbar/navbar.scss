@@ -1,0 +1,67 @@
+.header {
+  width: 100vw;
+  height: 80px;
+  background-color: #000;
+  border-bottom: 2px solid #333;
+}
+
+.headerContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.headingContainer {
+  height: 40px;
+  margin-left: 90px;
+}
+
+.heading {
+  font-weight: 500;
+  color: #fff;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  list-style: none;
+  margin-right: 30px;
+}
+
+.navLink {
+  color: #888;
+  padding: 10px 16px;
+  font-size: 18px;
+  height: 49px;
+  text-decoration: none;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+  &:hover {
+    color: #fff;
+    background-color: #333333;
+  }
+  &.active {
+    color: #fff;
+  }
+  &.active::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 0px;
+    width: 50px;
+    margin-top: 80px;
+    margin-left: 9px;
+    margin-right: 9px;
+    border-bottom-color: #fff;
+    border-bottom-width: 3px;
+    border-bottom-style: solid; 
+  }
+}

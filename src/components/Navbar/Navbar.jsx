@@ -4,63 +4,7 @@ import Input from '../Input/Input';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-function Navbar(mode) {
-
-  const [endpoint, setEndpoint] = useState('');
-  const [input, setInput] = useState('');
-  const [inputDisabled, setInputDisabled] = useState('');
-
-  const handleChange = e => {
-    setInput(e.target.value);
-    setEndpoint("http://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exchars=1200&exintro=true&explaintext=true&generator=search&gsrlimit=20&gsrsearch=" + e.target.value);
-    console.log(e.target.value);
-  }
-
-  useEffect(() => {
-    const keyDownHandler = async e => {
-      
-      if (e.key === 'Enter') {
-        e.preventDefault();
-
-        // Disable input
-        setInputDisabled(true);
-
-        try {
-          const res = await axios.get("http://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exchars=1200&exintro=true&explaintext=true&generator=search&gsrlimit=20&gsrsearch=" + e.target.value);
-          if(res.error) throw new Error(res.data.error.info);
-          if(res.data.query == null) return console.log('Not found!');
-          gatherData(res.data.query.pages);
-          
-        } catch (error) {
-          console.error(error);
-        } finally {
-          setInput('');
-          setInputDisabled(false);
-        }
-      }
-    };
-
-    document.addEventListener('keydown', keyDownHandler);
-
-    return () => {
-      document.removeEventListener('keydown', keyDownHandler);
-    };
-  }, []);
-
-  const gatherData = pages => {
-    if(!pages) return console.log('Not found!');
-    const results = Object.values(pages).map(page => ({
-      pageId: page.pageid,
-      title: page.title,
-      intro: page.extract,
-    }));
-    console.log(results);
-    setData(results);
-  };
-
-  const setData = data => {
-
-  };
+function Navbar(props) {
 
   return (
     <header className='header'>
@@ -69,7 +13,7 @@ function Navbar(mode) {
           <h1 className="heading">betterwiki.</h1>
         </div>
 
-        <Input handleChange={handleChange} value={input} disabled={inputDisabled} type="search" />
+        <Input handleChange={props.searchHandle} value={props.searchInput} disabled={props.disabled} type="search" />
 
         <nav>
           <ul>

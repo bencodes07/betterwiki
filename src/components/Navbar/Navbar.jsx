@@ -8,7 +8,7 @@ function Navbar(props) {
     <header className='header'>
       <div className="headerContent">
         <div className="headingContainer">
-          <h1 className="heading">betterwiki.</h1>
+          <h1 style={{cursor: 'pointer'}} className="heading">betterwiki.</h1>
         </div>
 
         <Input handleChange={props.searchHandle} value={props.searchInput} disabled={props.disabled} type="search" />

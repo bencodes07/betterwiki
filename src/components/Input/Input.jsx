@@ -5,7 +5,7 @@ function SearchInput(props) {
   return (
     <div className={`input ${props.value != undefined ? props.value : ""} ${props.size != undefined ? props.size : "default"}`}>
       <FiSearch id='icon'/>
-      <input value={props.value} onChange={props.handleChange} type="search" name="search" id="searchInput" placeholder={props.placeholder != undefined ? props.placeholder : "Search..."} disabled={props.disabled != undefined ? props.disabled : false} />
+      <input maxLength={40} value={props.value} onChange={props.handleChange} type="search" name="search" id="searchInput" placeholder={props.placeholder != undefined ? props.placeholder : "Search..."} disabled={props.disabled != undefined ? props.disabled : false} />
     </div>
   );
 }
@@ -13,7 +13,7 @@ function SearchInput(props) {
 function NormalInput(props) {
   return (
     <div className={`input ${props.value != undefined ? props.value : ""} ${props.size != undefined ? props.size : "default"}`}>
-      <input onChange={props.handleChange} type="search" placeholder={props.placeholder != undefined ? props.placeholder : "Default"} name="search" id="searchInput" disabled={props.disabled != undefined ? props.disabled : false} />
+      <input maxLength={40} onChange={props.handleChange} type="search" placeholder={props.placeholder != undefined ? props.placeholder : "Default"} name="search" id="searchInput" disabled={props.disabled != undefined ? props.disabled : false} />
     </div>
   );
 }

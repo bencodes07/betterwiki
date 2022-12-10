@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import { FiSearch } from 'react-icons/fi';
-import './input.scss';
 
 function SearchInput(props) {
   return (

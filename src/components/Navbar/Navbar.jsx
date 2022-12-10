@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './navbar.scss';
 import Input from '../Input/Input';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import Link from 'next/link';
 
 function Navbar(props) {
 
@@ -17,16 +15,16 @@ function Navbar(props) {
 
         <nav>
           <ul>
-            <Link to="/" className="navLink active">
+            <Link href="/" className="navLink active">
               Home
             </Link>
-            <Link to="/content" className="navLink">
+            <Link href="/pages" className="navLink">
               Pages
             </Link>
-            <Link to="/about" className="navLink">
+            <Link href="/about" className="navLink">
               About
             </Link>
-            <Link to="/help" className="navLink">
+            <Link href="/help" className="navLink">
               Help
             </Link>
           </ul>

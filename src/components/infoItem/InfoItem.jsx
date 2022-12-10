@@ -1,5 +1,4 @@
 import React from 'react';
-import 'InfoItem.scss';
 
 function InfoItem(props) {
   return (

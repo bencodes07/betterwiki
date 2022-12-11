@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Input from '../Input/Input';
 import Link from 'next/link';
 
@@ -8,7 +8,7 @@ function Navbar(props) {
     <header className='header'>
       <div className="headerContent">
         <div className="headingContainer">
-          <h1 style={{cursor: 'pointer'}} className="heading">betterwiki.</h1>
+          <Link style={{cursor: 'pointer'}} className="heading text-3xl" href="/"> betterwiki.</Link>
         </div>
 
         <Input handleChange={props.searchHandle} value={props.searchInput} disabled={props.disabled} type="search" />

@@ -10,9 +10,9 @@ function InfoItem(props) {
   return (
     <div className='infoItemContainer'>
       <div className="infoItemHeading">
-        <h2>{props.title}</h2>
-        <p className='infoItemId'>ID: <code>{props.id}</code></p>
-        <BiLinkExternal className='infoItemLink' onClick={handleClick} />
+        <h2 className='text-2xl font-semibold'>{props.title}</h2>
+        <p className='infoItemId'>ID: <code className='font-xs'>{props.id}</code></p>
+        <BiLinkExternal className='infoItemLink text-3xl' onClick={handleClick} />
       </div>
 
       <p className='infoItemContent'>{props.intro}</p>

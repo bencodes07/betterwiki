@@ -77,7 +77,7 @@ function Home() {
       <>
         <Navbar searchHandle={handleChange} searchInput={input} disabled={inputDisabled} />
         <main>
-          <h1>You searched for: <strong>{finalInput}</strong></h1>
+          <h1 className="text-xl">You searched for: <strong>{finalInput}</strong></h1>
           <div className='resultContainerGrid'>
             <InfoItem href={finalUrls[0].url} title={finalData[0].title} id={finalData[0].pageId} intro={finalData[0].intro} />
             <InfoItem href={finalUrls[1].url} title={finalData[0].title} id={finalData[1].pageId} intro={finalData[1].intro} />
@@ -110,7 +110,7 @@ function Home() {
       <>
         <Navbar searchHandle={handleChange} searchInput={input} disabled={inputDisabled} />
         <main>
-          <h1>Type something above to search</h1>
+          <h1 className="text-xl">Type something above to search</h1>
           <div className='resultContainerGrid'>
           </div>
         </main>

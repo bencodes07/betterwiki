@@ -5,7 +5,7 @@ import { BiLinkExternal } from 'react-icons/bi';
 function InfoItem(props) {
 
   const handleClick = e => {
-    window.location.href = props.href;
+    window.open('https://en.wikipedia.org/w/index.php?curid=' + props.id, '_blanc');
   }
   return (
     <div className='infoItemContainer'>
